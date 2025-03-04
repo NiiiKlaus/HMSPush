@@ -92,13 +92,13 @@ jobs:
         allowUpdates: true
         removeArtifacts: true
 
-    - name: Release to XPosed Repo
-      uses: ncipollo/release-action@v1
-      with:
-        tag: ${{ steps.var.outputs.version }}
-        allowUpdates: true
-        owner: Xposed-Modules-Repo
-        repo: one.yufz.hmspush
-        token: ${{ secrets.GH_TOKEN }}
-        omitNameDuringUpdate: true
-        omitBodyDuringUpdate: true
+    #- name: Release to XPosed Repo
+      #uses: ncipollo/release-action@v1
+      #with:
+        #tag: ${{ steps.var.outputs.version }}
+        #allowUpdates: true
+        #owner: Xposed-Modules-Repo
+        #repo: one.yufz.hmspush
+        #token: ${{ secrets.GH_TOKEN }}
+        #omitNameDuringUpdate: true
+        #omitBodyDuringUpdate: true
