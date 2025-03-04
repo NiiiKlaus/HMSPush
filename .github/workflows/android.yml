@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #- uses: actions/checkout@v3
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
+    #- uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -46,13 +46,15 @@ jobs:
         echo "release_artifact=$(basename -s .apk app/build/outputs/apk/release/*.apk)" >> $GITHUB_ENV
 
     - name: Upload Debug
-      uses: actions/upload-artifact@v3
+      #uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.debug_artifact }}
         path: app/build/outputs/apk/debug/*.apk
 
     - name: Upload Release
-      uses: actions/upload-artifact@v3
+      #uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.release_artifact }}
         path: app/build/outputs/apk/release/*.apk
