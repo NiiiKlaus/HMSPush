@@ -12,6 +12,7 @@ enum class Property(val entry: Pair<String, String>) {
     EMUI_VERSION("ro.build.version.emui" to "EmotionUI_8.0.0"),
     BRAND("ro.product.brand" to "Huawei"),
     MANUFACTURER("ro.product.manufacturer" to "HUAWEI"),
+    MODEL("ro.product.model" to "NOH-AN00"),
     MIUI_VERSION("ro.miui.ui.version.name" to "");
 
     val key: String
@@ -45,7 +46,8 @@ fun fakeProperty(vararg properties: Pair<String, String>) {
     }
 
     if (propertyMap.containsKey("ro.product.model")) {
-        Build::class.java["MODEL"] = propertyMap["ro.product.model"]
+        //Build::class.java["MODEL"] = propertyMap["ro.product.model"]
+        Build::class.java["MODEL"] = propertyMap[Property.MODEL.key]
     }
 
     if (propertyMap.containsKey("ro.build.display.id")) {
